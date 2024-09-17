@@ -1,0 +1,2 @@
+Dans qemu, CTRL+ALT+SHIFT+2
+> info registers

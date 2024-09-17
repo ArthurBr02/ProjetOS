@@ -1,0 +1,1 @@
+qemu -cdrom ./os.iso -m 1024
