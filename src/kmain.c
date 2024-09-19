@@ -46,6 +46,6 @@ int kmain() {
     int base = 10;
 
     itoa(i, bufi, base);
-    writec(bufi, strlen(bufi), 4, 11);
+    writec(bufi, strlen(bufi), RED, LIGHT_MAGENTA);
     return 0;
 }
