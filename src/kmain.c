@@ -31,6 +31,21 @@ int kmain() {
     //fb_move_cursor(85);
 
     char buf[] = "Hello, World!\ntest nouvelle ligne\nnouvelle ligne 2";
+    char buf2[] = "\nHello, World!\ntest nouvelle ligne\nnouvelle ligne 2\n";
     write(buf, strlen(buf));
+    write(buf2, strlen(buf2));
+    
+    
+    int i = 256410;
+    //int size;
+    //if (i >= 0) size = i/10 + 1;
+    //else size = (-1 * i)/10 + 1;
+
+    char bufi[33];
+
+    int base = 10;
+
+    itoa(i, bufi, base);
+    writec(bufi, strlen(bufi), 4, 11);
     return 0;
 }

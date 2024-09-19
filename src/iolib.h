@@ -9,6 +9,7 @@
 void fb_move_cursor(unsigned short pos);
 void fb_write_cell(unsigned int i, char c, unsigned char fg, unsigned char bg);
 void write(char *buf, unsigned int len);
+void writec(char *buf, unsigned int len, unsigned char fg, unsigned char bg);
 void clear();
 int findLineNb(int);
 

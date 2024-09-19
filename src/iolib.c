@@ -88,6 +88,27 @@ void write(char *buf, unsigned int len) {
 }
 
 /*
+Write a char buffer to the framebuffer with colors specified
+ */
+void writec(char *buf, unsigned int len, unsigned char fg, unsigned char bg) {
+    // Nombre de caractères sur la ligne actuelle
+    unsigned int nbCharLine = 0;
+	for(unsigned int i=0;i<len;i++){
+        char c = *buf++;
+        if (c == '\n') {
+            state += MAX_ROW_LENGTH - (state % MAX_ROW_LENGTH);
+            state += 2 * findLineNb(state);
+            nbCharLine = 0;
+            continue;
+        }
+		fb_write_cell(state,c, fg, bg);
+		state+=2;
+        nbCharLine++;
+	}
+	fb_move_cursor(VALUE_FIRST_CHAR_CURSOR * findLineNb(state) + nbCharLine);
+}
+
+/*
 Clear the framebuffer
  */
 void clear() {
