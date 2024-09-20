@@ -1,1 +1,1 @@
-qemu -cdrom ./build/os.iso -m 1024
+qemu -cdrom ./build/os.iso -m 1024 -serial file:serial.log

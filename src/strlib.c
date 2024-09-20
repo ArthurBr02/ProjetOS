@@ -1,4 +1,6 @@
 
+#define NULL 0
+
 int strlen(const char *str) {
     int len = 0;
     while (str[len] != '\0') {
@@ -68,4 +70,23 @@ char* itoa(int value, char* buffer, int base)
  
     // inverse la string et la renvoie
     return reverse(buffer, 0, i - 1);
+}
+
+char * strcpy(char *strDest, const char *strSrc)
+{
+    if (strDest == NULL || strSrc == NULL) return NULL;
+    char *temp = strDest;
+    while(*strDest++ == *strSrc++); // or while((*strDest++=*strSrc++) != '\0');
+    return temp;
+}
+
+char * strcat(char *dest, const char *src)
+{
+    char *rdest = dest;
+
+    while (*dest)
+      dest++;
+    while (*dest++ == *src++)
+      ;
+    return rdest;
 }

@@ -12,6 +12,8 @@
 
 #include "iolib.h"
 #include "io.h"
+#include "serial.h"
+#include "strlib.h"
 
 char *fb = (char *) 0x000B8000;
 unsigned int state = 0;
@@ -105,4 +107,11 @@ Return the current line number on the frame buffer
 */
 int findLineNb(int state) {
     return state / MAX_ROW_LENGTH;
+}
+
+void log(char *buf, unsigned int len, char *severness) {
+    char buf2[strlen(severness) + len + 1];
+    strcpy(buf2, severness);
+    strcat(buf2, buf);
+    write(buf2, strlen(buf2));
 }

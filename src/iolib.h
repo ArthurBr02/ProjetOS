@@ -31,5 +31,6 @@ void write(char *buf, unsigned int len);
 void writec(char *buf, unsigned int len, unsigned char fg, unsigned char bg);
 void clear();
 int findLineNb(int);
+void log(char *buf, unsigned int len, char *severness);
 
 #endif /* INCLUDE_IOLIB_H */

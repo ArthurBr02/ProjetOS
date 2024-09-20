@@ -5,6 +5,7 @@
 
 #include "iolib.h"
 #include "strlib.h"
+#include "serial.h"
 
 
 void fb_write_cell(unsigned int i, char c, unsigned char fg, unsigned char bg);
@@ -47,5 +48,14 @@ int kmain() {
 
     itoa(i, bufi, base);
     writec(bufi, strlen(bufi), RED, LIGHT_MAGENTA);
+
+    serial_configure_baud_rate(1, 1);
+    serial_configure_line(1);
+    serial_configure_buffers(1);
+    serial_configure_modem(1);
+    serial_write(buf, strlen(buf));
+
+    //log(buf, strlen(buf), "INFO: ");
+
     return 0;
 }

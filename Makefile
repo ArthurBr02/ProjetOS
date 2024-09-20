@@ -1,4 +1,4 @@
-OBJECTS = build/loader.o build/kmain.o build/io.o build/iolib.o build/strlib.o
+OBJECTS = build/loader.o build/kmain.o build/io.o build/iolib.o build/strlib.o build/serial.o
 CC = gcc
 CFLAGS = -m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector \
 			-nostartfiles -nodefaultlibs -Wall -Wextra -Werror -c
